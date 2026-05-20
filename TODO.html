@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Todo App</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            margin-top: 300px;
+        
+        }
+
+        .container{
+            text-align: center;
+            width: 500px;        
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 2px;
+            background-color: blueviolet;
+        }
+
+        input{
+            width: 85%;
+            padding: 8px;
+        }
+
+        button{
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        li{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        } 
+
+     </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Todo App</h2>
+
+        <input type="text" id="todoInput" placeholder="Enter task">
+
+        <button id="addBtn">Add</button>
+
+        <ul id="todoList"></ul>
+
+    </div>
+
+<script>
+
+    let input = document.getElementById("todoInput");
+
+    let addBtn = document.getElementById("addBtn");
+
+    let todoList = document.getElementById("todoList");
+
+
+    addBtn.addEventListener("click", function(){
+
+        let task = input.value;
+
+        if(task === ""){
+            alert("Please enter task");
+            return;
+        }
+
+        
+        let li = document.createElement("li");
+
+        li.innerHTML = `
+            ${task}
+            <button onclick="deleteTask(this)">Delete</button>
+        `;
+
+        todoList.appendChild(li);
+
+        input.value = "";
+
+    });
+
+
+    function deleteTask(button){
+
+        button.parentElement.remove();
+
+    }
+
+</script>
+
+</body>
+</html>
