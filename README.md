@@ -13,7 +13,7 @@ A simple, single-file To-Do list app built with plain HTML, CSS, and JavaScript 
 
 - **HTML** – structure
 - **CSS** – styling
-- **Vanilla JavaScript** – DOM manipulation and app logic
+- **JavaScript** – DOM manipulation and app logic
 
 ## ⚙️ How It Works
 
